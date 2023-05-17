@@ -3,7 +3,7 @@
 ## Project/Goals
 The goal of this project is to clean, tranform and analyze the given database using SQL. Useful infromation should be extracted and communicated for the business. 
 ## Process
-### Step 1: Data is loaded from 
+### Step 1: Data is loaded from csv files into SQL database.
 ### (your step 2)
 
 ## Results
