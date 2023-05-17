@@ -4,7 +4,7 @@
 The goal of this project is to clean, tranform and analyze the given database using SQL. Useful infromation should be extracted and communicated for the business. 
 ## Process
 ### Step 1: Data is loaded from csv files into SQL database.
-### (your step 2)
+### Step 2: Data is cleaned by removing duplicates, 
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
