@@ -1,10 +1,9 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(fill in your description and goals here)
-
+The goal of this project is to clean, tranform and analyze the given database using SQL. Useful infromation should be extracted and communicated for the business. 
 ## Process
-### (your step 1)
+### Step 1: Data is loaded from 
 ### (your step 2)
 
 ## Results
