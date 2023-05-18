@@ -13,7 +13,11 @@ It was found no rows were duplicated.
 4. Date Data's Format and constainsts:
 5. Incorrect data: country and city 
 6. Incorrect data: Unit cost 
+The unit_price column in anlytics table needs to be divided by 1,000,000.
 
+```
+
+```
 
 
 
