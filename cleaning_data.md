@@ -24,8 +24,10 @@ What issues will you address by cleaning the data?
   These null values are not assumed to be zeros because they appear in bulk, whcih can be casued by loss fo data.
  
 
-5. Incorrect data in country column
-  In table all_sessions, column country, "Taiwan" and "Hong Kong" are falsely listed as countries intead of provinces of China. The following code is used to     correct this data:
+5. Incorrect data in country columnz:
+  In table all_sessions, column country, "Taiwan" and "Hong Kong" are falsely listed as countries intead of provinces of China. 
+  (Since only 12 of 193 UN nations recognize Taiwan as a sovereign nation, it is safe to assume it is not a country. )
+  The following code is used to correct this data:
   ```
   UPDATE all_sessions
   SET country=REPLACE(country,'Taiwan','China')
