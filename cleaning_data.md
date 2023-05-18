@@ -1,25 +1,36 @@
 What issues will you address by cleaning the data?
+
 1. Irrelevant Data: 
-Since the questions and goals are open-ended, all data is considered relavant at this stage. 
-3. Duplicate data:
-All tables are checked for duplicates. Example code:
+  Since the questions and goals are open-ended, all data is considered relavant at this stage. 
 
-```
-SELECT DISTINCT(productsku) FROM sales_report
-```
-
-It was found no rows were duplicated. 
-
-4. Date Data's Format and constainsts:
-5. Incorrect data: country and city 
-6. Incorrect data: Unit cost 
-The unit_price column in anlytics table needs to be divided by 1,000,000.
-
-```
-
-```
+2. Duplicate data:
+  All tables are checked for duplicates. Example code:
+  ```
+  SELECT DISTINCT(productsku) FROM sales_report
+  ```
+  It was found no rows were duplicated. 
 
 
+3. Incorrect data: Unit cost 
+  The unit_price column in anlytics table needs to be divided by 1,000,000.
 
-Queries:
-Below, provide the SQL queries you used to clean your data.
+  ```
+  UPDATE analytics
+  SET unit_price = unit_price / 1000000
+  ```
+
+4. Replacing missing data:
+  In tabel sales_report, column timeonsite, there are null values. 
+  These null values are not assumed to be zeros because they appear in bulk, whcih can be casued by loss fo data.
+ 
+
+5. Incorrect data in country column
+  In table all_sessions, column country, "Taiwan" and "Hong Kong" are falsely listed as countries intead of provinces of China. The following code is used to     correct this data:
+  ```
+  UPDATE all_sessions
+  SET country=REPLACE(country,'Taiwan','China')
+  ```
+  ```
+  UPDATE all_sessions
+  SET country=REPLACE(country,'Hong Kong','China')
+  ```
