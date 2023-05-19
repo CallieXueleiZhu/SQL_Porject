@@ -86,11 +86,27 @@ Country United States oders the highest variety of product types among all count
 
 
 SQL Queries:
+```sql
+SELECT v2productname, COUNT(*)
+FROM all_sessions
+WHERE city='Toronto' 
+--Top selling product for each city can be found by changing the city name 
+GROUP BY v2productname 
+ORDER BY COUNT(*) DESC
+```
 
+```sql
+SELECT v2productname, COUNT(*)
+FROM all_sessions
+WHERE country='Canada' 
+--Top selling product for each country can be found by changing the country name 
+GROUP BY v2productname 
+ORDER BY COUNT(*) DESC
+```
 
 
 Answer:
-
+To find the top selling product for each city/country, the city/country name in in line 3 of the codes can be changed to the desired city/country name. For example, the above example code shows the top selling product for Toronto is YouTube Trucker Hat, and the top selling product for Canada is 22oz YouTube Bottle Infuser. 
 
 
 
@@ -98,6 +114,19 @@ Answer:
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
 
 SQL Queries:
+```sql
+SELECT city, SUM(totaltransactionrevenue)
+FROM all_sessions
+Group BY city
+ORDER BY SUM(totaltransactionrevenue) DESC
+```
+
+```sql
+SELECT country, SUM(totaltransactionrevenue)
+FROM all_sessions
+Group BY country
+ORDER BY SUM(totaltransactionrevenue) DESC
+```
 
 
 
