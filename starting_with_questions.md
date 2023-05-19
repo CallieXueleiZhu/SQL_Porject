@@ -28,22 +28,20 @@ City San Francisco and country United States.
 
 SQL Queries:
 ```sql
+SELECT AVG(avgquant_by_city)
+FROM (
 SELECT city, AVG(productquantity) AS avgquant_by_city 
 FROM all_sessions
 GROUP BY city
 ORDER BY avgquant_by_city DESC
+	) AS virtual_table
+
 ```
 
-```sql
-SELECT country, AVG(productquantity) AS avgquant_by_country 
-FROM all_sessions
-GROUP BY country
-ORDER BY avgquant_by_country DESC
-```
 
 
 Answer:
-City Madrid and Country Spain.
+2.23
 
 
 
