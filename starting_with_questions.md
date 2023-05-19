@@ -53,10 +53,31 @@ City Madrid and Country Spain.
 
 SQL Queries:
 
+```sql
+SELECT v2productcategory,COUNT(v2productcategory)
+FROM all_sessions
+GROUP BY v2productcategory
+ORDER BY COUNT(v2productcategory) DESC
+```
 
+```sql
+SELECT city, COUNT(DISTINCT(v2productcategory))
+FROM all_sessions
+GROUP BY city
+ORDER BY COUNT(DISTINCT(v2productcategory)) DESC
+```
+
+```sql
+SELECT country, COUNT(DISTINCT(v2productcategory))
+FROM all_sessions
+GROUP BY country
+ORDER BY COUNT(DISTINCT(v2productcategory)) DESC
+```
 
 Answer:
-
+The most ordered product category is "Home/Shop by Brand/YouTube/". 
+City Mountain View orders the highest variety of product types among all cities.
+Country United States oders the highest variety of product types among all countries. 
 
 
 
