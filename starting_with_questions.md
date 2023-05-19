@@ -5,12 +5,23 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 
 SQL Queries:
+```
+SELECT city, SUM(totaltransactionrevenue) AS revenue_by_city 
+FROM all_sessions
+GROUP BY city
+ORDER BY revenue_by_city
+```
 
-
+```
+SELECT country, SUM(totaltransactionrevenue) AS revenue_by_country 
+FROM all_sessions
+GROUP BY country
+ORDER BY revenue_by_country
+```
 
 Answer:
-
-
+City Zurich has the highest total transaction revenue of 1.699e+07. 
+Country Switzerland has the highest total transaction revenue of 1.699e+07. 
 
 
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
