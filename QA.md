@@ -12,9 +12,8 @@ However, it is unsafe to remove all NULL rows or columns since we do not have en
 
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
-1. 
-Check for duplicate visitid:
 
+1. 
 ```sql
 SELECT visitid, COUNT(*)
 FROM all_sessions
