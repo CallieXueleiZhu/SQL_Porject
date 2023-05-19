@@ -114,25 +114,48 @@ To find the top selling product for each city/country, the city/country name in 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
 
 SQL Queries:
+Use the following code to find the total revenue for all countries.
 ```sql
-SELECT city, SUM(totaltransactionrevenue)
+SELECT SUM(revcountry)
+FROM(
+SELECT country, SUM(totaltransactionrevenue) AS revcountry
 FROM all_sessions
-Group BY city
+Group BY country
+ORDER BY SUM(totaltransactionrevenue) DESC
+) AS virtual_table
+```
+The revenue for each country can be found:
+```sql
+SELECT country, SUM(totaltransactionrevenue) AS revcountry
+FROM all_sessions
+Group BY country
 ORDER BY SUM(totaltransactionrevenue) DESC
 ```
 
+Use the following code to find the total revenue for all cities.
 ```sql
-SELECT country, SUM(totaltransactionrevenue)
+SELECT SUM(revcity)
+FROM(
+SELECT city, SUM(totaltransactionrevenue) AS revcity
 FROM all_sessions
-Group BY country
+Group BY city
+ORDER BY SUM(totaltransactionrevenue) DESC
+) AS virtual_table
+```
+The revenue for each city can be found:
+```sql
+SELECT city, SUM(totaltransactionrevenue) AS revcity
+FROM all_sessions
+Group BY city
 ORDER BY SUM(totaltransactionrevenue) DESC
 ```
 
 
 
 Answer:
-
-
+By comparing the total revenue and individual revenue, the impact can be summarized. 
+United States has the highest revenue and Switzerland has the lowest revenue. 
+San Francisco has the highest revenue and Zurich has the lowest revenue. 
 
 
 
