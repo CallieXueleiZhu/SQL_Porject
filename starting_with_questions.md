@@ -12,7 +12,7 @@ GROUP BY city
 ORDER BY revenue_by_city DESC
 ```
 
-```
+```sql
 SELECT country, SUM(totaltransactionrevenue) AS revenue_by_country 
 FROM all_sessions
 GROUP BY country
@@ -27,14 +27,14 @@ City San Francisco and country United States.
 
 
 SQL Queries:
-```
+```sql
 SELECT city, AVG(productquantity) AS avgquant_by_city 
 FROM all_sessions
 GROUP BY city
 ORDER BY avgquant_by_city DESC
 ```
 
-```
+```sql
 SELECT country, AVG(productquantity) AS avgquant_by_country 
 FROM all_sessions
 GROUP BY country
