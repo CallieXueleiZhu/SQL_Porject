@@ -6,12 +6,14 @@ Assume that the visitid column is unique becasue a new visit id is generated for
 2.
 Assume the sku for each product is unique. The uniqueness of the Column "sku: under Table "products" can eb checked. 
 
-3. The database has large amounts of NULL data entries. 
+3. 
+The database has large amounts of NULL data entries. 
 However, it is unsafe to remove all NULL rows or columns since we do not have enough domain knowledge. It shoudl be checked if any columns are all NULL. If so, the column can be dropped. 
 
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
-1. Check for duplicate visitid:
+1. 
+Check for duplicate visitid:
 
 ```sql
 SELECT visitid, COUNT(*)
@@ -32,6 +34,7 @@ HAVING COUNT(*) > 1
 ```
 Nothing was returned, so the no sku was duplicated. 
 
+3.
 ```sql
 SELECT productRefundAmount
 FROM all_sessions
