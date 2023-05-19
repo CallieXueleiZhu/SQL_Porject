@@ -1,4 +1,5 @@
 What are your risk areas? Identify and describe them.
+
 1.
 Assume that the visitid column is unique becasue a new visit id is generated for each individua visit. The uniqeness of Column "visitid" under Table "all_sessions" can be checked. 
 
